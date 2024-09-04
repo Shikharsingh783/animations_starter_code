@@ -44,6 +44,7 @@ class _AnimatedColorPaletteState
           children: [
             for (Color color in currentPalette)
               AnimatedContainer(
+                curve: Curves.linear,
                 duration: const Duration(milliseconds: 500),
                 width: 100,
                 height: 100,
