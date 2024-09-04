@@ -5,10 +5,12 @@ class AnimatedColorPalette extends StatefulWidget {
   const AnimatedColorPalette({super.key});
 
   @override
-  State<AnimatedColorPalette> createState() => _AnimatedColorPaletteState();
+  State<AnimatedColorPalette> createState() =>
+      _AnimatedColorPaletteState();
 }
 
-class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
+class _AnimatedColorPaletteState
+    extends State<AnimatedColorPalette> {
   List<Color> currentPalette = generateRandomPalette();
 
   static List<Color> generateRandomPalette() {
@@ -41,15 +43,24 @@ class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             for (Color color in currentPalette)
-              Container(
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 500),
                 width: 100,
                 height: 100,
                 color: color,
                 margin: const EdgeInsets.all(8),
               ),
             ElevatedButton(
+              style: ButtonStyle(
+                  shape: WidgetStateProperty.all(
+                      RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(8)))),
               onPressed: regeneratePalette,
-              child: const Text('Generate New Palette'),
+              child: const Text(
+                'Generate New Palette',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
