@@ -12,25 +12,27 @@ class PulsatingCircleAnimation extends StatelessWidget {
       ),
       body: Center(
         child: TweenAnimationBuilder(
-            tween: Tween<double>(begin: 0, end: 200),
-            duration: const Duration(milliseconds: 3000),
-            builder: (context, size, widget) {
-              return Container(
-                width: size,
-                height: size,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.blue,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.blue.withOpacity(0.5),
-                      blurRadius: size,
-                      spreadRadius: size / 2,
-                    ),
-                  ],
-                ),
-              );
-            }),
+          tween: Tween<double>(begin: 0, end: 200),
+          duration: const Duration(milliseconds: 3000),
+          builder: (context, size, widget) {
+            return Container(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.blue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.5),
+                    blurRadius: size,
+                    spreadRadius: size / 2,
+                  ),
+                ],
+              ),
+            );
+          },
+          child: null,
+        ),
       ),
     );
   }
