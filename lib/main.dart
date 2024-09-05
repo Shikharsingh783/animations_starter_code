@@ -1,4 +1,4 @@
-import 'package:animation_starter_code/explicit_examples/login_animation.dart';
+import 'package:animation_starter_code/explicit_examples/loading_animation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const LoginScreenAnimation(),
+      home: const RadialProgressAnimation(
+        progress: 0.65,
+        color: Colors.blue,
+      ),
     );
   }
 }
